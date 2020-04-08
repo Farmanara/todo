@@ -8,23 +8,21 @@ function deleteItem() {
 
 function ListItems(props) {
   const items = props.items;
-  const listItems = items.map(item => {
+  const listItems = items.map((item) => {
     return (
       <div className="list" key={item.key}>
-        <p>
-          {" "}
-          <input
-            className="inputTasks"
-            id={item.key}
-            value={item.text}
-            onChange={e => props.setUpdate(e.target.value, item.key)}
-          ></input>{" "}
-        </p>
+        {" "}
+        <input
+          className="inputTasks"
+          id={item.key}
+          value={item.text}
+          onChange={(e) => props.setUpdate(e.target.value, item.key)}
+        ></input>{" "}
         <button
           onClick={() => props.deleteItem(item.key)}
           className="deleteButton"
         >
-          -
+          <i class="trash icon"></i>
         </button>
       </div>
     );

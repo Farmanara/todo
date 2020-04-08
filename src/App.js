@@ -9,8 +9,8 @@ class App extends React.Component {
       items: [],
       currentItem: {
         text: "",
-        key: ""
-      }
+        key: "",
+      },
     };
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
@@ -21,8 +21,8 @@ class App extends React.Component {
     this.setState({
       currentItem: {
         text: e.target.value,
-        key: Date.now()
-      }
+        key: Date.now(),
+      },
     });
   }
 
@@ -36,34 +36,34 @@ class App extends React.Component {
         items: newItems,
         currentItem: {
           text: "",
-          key: ""
-        }
+          key: "",
+        },
       });
     }
   }
 
   deleteItem(key) {
-    const filteredItems = this.state.items.filter(item => {
+    const filteredItems = this.state.items.filter((item) => {
       return item.key !== key;
     });
     this.setState({
       items: filteredItems,
       currentItem: {
         text: "",
-        key: ""
-      }
+        key: "",
+      },
     });
   }
 
   setUpdate(value, key) {
     const items = this.state.items;
-    items.map(item => {
+    items.map((item) => {
       if (item.key === key) {
         item.text = value;
       }
     });
     this.setState({
-      items: items
+      items: items,
     });
   }
   render() {
@@ -76,7 +76,9 @@ class App extends React.Component {
             value={this.state.currentItem.text}
             onChange={this.handleInput}
           ></input>
-          <button type="submit">+</button>
+          <button type="submit">
+            <i className="plus square icon big"></i>
+          </button>
         </form>
         <ListItems
           items={this.state.items}

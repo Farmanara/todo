@@ -1,19 +1,33 @@
 .list {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  border: ridge violet;
   padding: 0px 5px;
   border-radius: 5px;
+  width: 90%;
   outline: 0;
-  margin-bottom: 5px;
+  margin: 0px auto 5px auto;
+  border: 1px white solid;
+  align-items: center;
+  height: 40px;
 }
 .inputTasks {
-  background-color: chocolate;
+  background-color: rgb(111, 124, 153);
   border: 0;
   font-size: 20px;
   margin: 0 auto;
+  padding: 0;
+  vertical-align: center;
 }
 
-.inputTasks button {
-  width: 40px;
+.list button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: rgb(111, 124, 153);
+  margin: 0;
+  padding: 0;
+  font-weight: bolder;
+  font-size: large;
+  color: rgb(224, 216, 216);
 }
